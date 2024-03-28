@@ -9,22 +9,30 @@ public class repeatString {
 
 		String arr[] = new String[T];
 		
-		for(int i = 0; i < T; i++) {
+		for(int i = 0; i < T; i++) { //배열에 추가해서 한 번에 출력하기
 			int R = sc.nextInt();
-			arr[i] = sc.next();
+			String str = sc.next();
 			
 			StringBuilder sb = new StringBuilder();
-			int cnt = 0;
-			for(int k = 0; k < arr.length; k++) {
-				do {
-					sb.append(arr.charAt(k));
-					cnt++;
-				}while(cnt %R != 0);
+			for(int k = 0; k < str.length(); k++) {
+				for(int j = 0; j < R; j++) {
+					sb.append(str.charAt(k));
+				}
 			}
 			arr[i] = sb.toString();
 		}
-		
-		
+		/*for(int i = 0; i < T; i++) { //입력받자마자 출력하기
+			int R = sc.nextInt();
+			String str = sc.next();
+			
+			for(int k =0; k < str.length(); k++) {
+				for(int j = 0; j < R; j++) {
+					System.out.print(str.charAt(k));
+				}
+			}
+			System.out.println();
+		}
+		*/
 		for(int i = 0; i < T; i++) {
 			System.out.println(arr[i]);
 		}
